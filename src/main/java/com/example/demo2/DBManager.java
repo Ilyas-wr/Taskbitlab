@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBManager {
-    private static final String GET_ALL_ITEMS_QUERY = "SELECT * FROM items";
+    private static final String Get_Items = "SELECT * FROM items";
     private static Connection connection;
 
     static {
@@ -23,7 +23,7 @@ public class DBManager {
         try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
                 "postgres",
                 "postgres");
-             PreparedStatement statement = connection.prepareStatement(GET_ALL_ITEMS_QUERY);
+             PreparedStatement statement = connection.prepareStatement(Get_Items);
              ResultSet resultSet = statement.executeQuery()) {
 
             while (resultSet.next()) {
