@@ -1,20 +1,21 @@
 package com.example.demo2;
 
-public class Tasks {
+public class Items {
     Long id;
     String name;
     String description;
-    String deadlineDate;
+    double price;
 
-    public Tasks() {
+    public Items() {
     }
 
-    public Tasks(Long id, String name, String description, String deadlineDate) {
+    public Items(Long id, String name, String description, double price) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.deadlineDate = deadlineDate;
+        this.price = price;
     }
+
 
     public Long getId() {
         return id;
@@ -40,11 +41,11 @@ public class Tasks {
         this.description = description;
     }
 
-    public String getDeadlineDate() {
-        return deadlineDate;
+    public double getPrice() {
+        return price;
     }
 
-    public void setDeadlineDate(String deadlineDate) {
-        this.deadlineDate = deadlineDate;
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

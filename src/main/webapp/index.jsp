@@ -1,3 +1,5 @@
+<%@ page import="com.example.demo2.Items" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -22,21 +24,18 @@
         </div>
     </div>
 </nav>
-<h1>Add New Task</h1>
-<form action="AddTaskServlet" method="post">
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Name:</span>
-        <input weight="200px" type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
-        <textarea name="description" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></textarea>
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Deadline Date:</span>
-        <input type="text" name="deadlineDate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div>
-    <input type="submit" value="Add Task">
-</form>
+<h1>Список товаров</h1>
+<table>
+    <tbody>
+    <% for (Items item : (ArrayList<Items>) request.getAttribute("items")) { %>
+    <tr>
+        <td><%= item.getId() %></td>
+        <td><%= item.getName() %></td>
+        <td><%= item.getDescription() %></td>
+        <td><%= item.getPrice() %></td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>
 </body>
 </html>
